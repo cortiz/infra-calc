@@ -1,12 +1,23 @@
 region: us-east-1
 type: aws
 services:
-  AmazonEC2:
+  - service: AmazonEC2
     name: Test Machine1
     amount: 1
-    type: m5a.xlarge
+    instanceType: m5a.xlarge
     operatingSystem: linux
     disk:
-        type: gp2
-        size: 30
-
+     - type: gp2
+       size: 30
+     - type: gp2
+       size: 30
+#  - service: AmazonRDS
+#    name: My DB
+#    amount: 1
+#    databaseEngine: PostgreSQL
+#    instanceType: db.r5d.large
+#    volumeType: General Purpose
+#    deploymentOption: Multi-AZ
+#    disk:
+#      - volumeType: gp2
+#        size: 30
