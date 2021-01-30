@@ -1,34 +1,34 @@
-import boto3
-import json
-import yaml
-from region import REGION_SHORTS
-import re
 import importlib
+import re
+
+import boto3
+import yaml
+
+from region import REGION_SHORTS
 
 client = boto3.client('pricing')
 classCache = {}
 
 
-def my_import(name):
-    print(name)
-    cls = importlib.import_module(name)
-    return cls
 
 
-def camel_to_snake(name):
-    name = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
-    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', name).lower()
-
-
-with open(r'/home/cortiz/dev/rivetlogic/cops/aws-calc/test/c.yaml') as file:
+pricing_info = []
+with open(r'/home/cortiz/repos/infra-calc/test/c.yaml') as file:
     infra = yaml.load(file, Loader=yaml.FullLoader)
-    print(infra)
     region = REGION_SHORTS[infra["region"]]
+    pricing_api = infra["type"]
     if infra["type"].lower() == "aws":
         for service_infra in infra["services"]:
             service_type = service_infra["service"]
             if service_type not in classCache:
-                klass = my_import("infracalc.aws.{}".format(camel_to_snake(service_type)))
-                classCache[service_type] = klass.AmazonEC2(region)
+                module = my_import("infracalc.{}.{}".format(pricing_api, camel_to_snake(service_type)))
+                klass = getattr(module, service_type)
+                classCache[service_type] = klass(region)
             service_instance = classCache[service_type]
-            service_instance.price_info(service_infra)
+            pricing_info.append(service_instance.price_info(service_infra))
+    if "export" in infra:
+        exporter = infra["export"]["exporter"]
+        params = infra["export"]["params"]
+        export_module = my_import("infracalc.{}.{}".format("exporters", camel_to_snake(exporter)))
+        exporter_klass = getattr(export_module, exporter)
+        exporter_klass(pricing_info, params).export()

@@ -2,6 +2,7 @@ import json
 from abc import ABC
 
 from infracalc.aws.aws_resource import AWSResource
+from infracalc.const import HOURS_IN_A_MONTH
 
 
 class AmazonEC2(AWSResource, ABC):
@@ -18,7 +19,7 @@ class AmazonEC2(AWSResource, ABC):
             }, {
                 'Type': 'TERM_MATCH',
                 'Field': 'productFamily',
-                'Value': 'Compute Instance'
+                'Value': self.product_family
             },
             {
                 'Type': 'TERM_MATCH',
@@ -39,6 +40,5 @@ class AmazonEC2(AWSResource, ABC):
     def price_info(self, attrs):
         name = attrs.pop("name")
         amount = attrs.pop("amount")
-        disk = attrs.pop("disk")
         attrs.pop("service")
-        print(self.get_pricing(attrs))
+        return self.get_pricing(attrs, amount, HOURS_IN_A_MONTH, name)

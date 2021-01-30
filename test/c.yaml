@@ -1,16 +1,20 @@
 region: us-east-1
 type: aws
+export:
+  exporter: Table # Table, Json
+  params:
+    file: my-service.xlsx
 services:
   - service: AmazonEC2
     name: Test Machine1
     amount: 1
     instanceType: m5a.xlarge
     operatingSystem: linux
-    disk:
-     - type: gp2
-       size: 30
-     - type: gp2
-       size: 30
+  - service: AmazonEBS
+    name: Test Machine1 root volume
+    amount: 1
+    volumeApiName: gp3
+    size: 30
 #  - service: AmazonRDS
 #    name: My DB
 #    amount: 1

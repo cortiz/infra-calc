@@ -1,29 +1,29 @@
-# import boto3
-# import json
-# import pprint
+import boto3
+import json
+import pprint
 #
 # from awspricing.constants import REGION_SHORTS
 #
 # from infracalc.aws import aws_utils
 # from infracalc.aws.amazon_ec2 import AmazonEC2
 #
-# pricing = boto3.client("pricing")
+pricing = boto3.client("pricing")
 #
 #
-# def service_options(service_name):
-#     print("Selected EC2 Attributes & Values")
-#     print("================================")
-#     response = pricing.describe_services(ServiceCode=service_name)
-#     attrs = response['Services'][0]['AttributeNames']
-#
-#     for attr in attrs:
-#         response = pricing.get_attribute_values(ServiceCode=service_name, AttributeName=attr)
-#
-#         values = []
-#         for attr_value in response['AttributeValues']:
-#             values.append(attr_value['Value'])
-#         print("  " + attr + ": " + ", ".join(values))
-#
+def service_options(service_name):
+    print("Selected EC2 Attributes & Values")
+    print("================================")
+    response = pricing.describe_services(ServiceCode=service_name)
+    attrs = response['Services'][0]['AttributeNames']
+
+    for attr in attrs:
+        response = pricing.get_attribute_values(ServiceCode=service_name, AttributeName=attr)
+
+        values = []
+        for attr_value in response['AttributeValues']:
+            values.append(attr_value['Value'])
+        print("  " + attr + ": " + ", ".join(values))
+
 #
 # def print_service_info(service_name, attrs):
 #     print("Selected EC2 Products")
@@ -37,7 +37,7 @@
 #         print()
 #
 #
-# service_options("AmazonEC2")
+service_options("AmazonEC2")
 #
 # # print_service_info("AmazonRDS",
 # #                    {'location': REGION_SHORTS["us-east-1"], 'productFamily': 'Database Storage',

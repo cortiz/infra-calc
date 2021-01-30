@@ -3,15 +3,7 @@ from abc import ABC, abstractmethod
 import boto3
 import json
 
-
-class PricingInfo:
-    def __init__(self, description, unit, price_per_unit):
-        self.description = description
-        self.unit = unit
-        self.price_per_unit = price_per_unit
-
-    def __str__(self):
-        return "{} {} {}".format(self.description, self.unit, self.price_per_unit)
+from infracalc.price_info import PricingInfo
 
 
 class AWSResource(ABC):
@@ -49,7 +41,8 @@ class AWSResource(ABC):
             return {"desc": pricing_data["description"], "unit": pricing_data["unit"],
                     "pricePerUnit": pricing_data["pricePerUnit"]["USD"]}
 
-    def get_pricing(self, attrs):
+    def get_pricing(self, attrs, amount_of_services, amount_of_units, service_name):
         response = self.__get_service_info(attrs)
         raw = self.__get_service_pricing(json.loads(response['PriceList'][0])['terms'][self.term_type])
-        return PricingInfo(raw["desc"], raw["unit"], raw["pricePerUnit"])
+        return PricingInfo(raw["desc"], raw["unit"], raw["pricePerUnit"], amount_of_services, amount_of_units,
+                           service_name)
