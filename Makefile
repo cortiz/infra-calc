@@ -61,3 +61,5 @@ update:
 	make uninstall
 	git pull origin main
 	make clean install
+clean-dist:
+	rm -rf dist/
