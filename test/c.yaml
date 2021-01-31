@@ -10,18 +10,34 @@ services:
     amount: 1
     instanceType: m5a.xlarge
     operatingSystem: linux
+    storage:
+      volumeApiName: gp3
+      size: 30
   - service: AmazonEBS
-    name: Test Machine1 root volume
+    name: Test Machine1 volume
     amount: 1
     volumeApiName: gp3
     size: 30
-#  - service: AmazonRDS
-#    name: My DB
-#    amount: 1
-#    databaseEngine: PostgreSQL
-#    instanceType: db.r5d.large
-#    volumeType: General Purpose
-#    deploymentOption: Multi-AZ
-#    disk:
-#      - volumeType: gp2
-#        size: 30
+  - service: AmazonEKS
+    name: Amazon EKS
+    amount: 1
+  - service: AmazonRDS
+    name: Data Base
+    databaseEngine: PostgreSQL
+    deploymentOption: Multi-AZ
+    instanceType: db.t3.micro
+    amount: 1
+    storage:
+      volumeType: General Purpose
+      size: 30
+  - service: AmazonECR
+    name: Registry Images
+    size: 10
+    amount: 1
+  - service: AmazonES
+    name: Search
+    instanceType: c4.8xlarge.elasticsearch
+    amount: 1
+    storage:
+      storageMedia: GP2
+      size: 30

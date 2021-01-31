@@ -1,6 +1,7 @@
 import importlib
 import re
 import sys
+
 import click
 import yaml
 
@@ -58,7 +59,7 @@ pass_context = click.make_pass_decorator(Context, ensure=True)
 @pass_context
 def cli(ctx, verbose, file):
     ctx.verbose = verbose
-    pricing_info = []
+    pricing_info_results = []
     infra = yaml.load(file, Loader=yaml.FullLoader)
     region = REGION_SHORTS[infra["region"]]
     classCache = {}
@@ -71,13 +72,18 @@ def cli(ctx, verbose, file):
                 klass = getattr(module, service_type)
                 classCache[service_type] = klass(region)
             service_instance = classCache[service_type]
-            pricing_info.append(service_instance.price_info(service_infra))
+            pricing_info = service_instance.price_info(service_infra)
+            if type(pricing_info) is list:
+                pricing_info_results += pricing_info
+            else:
+                pricing_info_results.append(pricing_info)
+
     if "export" in infra:
         exporter = infra["export"]["exporter"]
         params = infra["export"]["params"]
         export_module = my_import("infracalc.{}.{}".format("exporters", camel_to_snake(exporter)))
         exporter_klass = getattr(export_module, exporter)
-        exporter_klass(pricing_info, params).export()
+        exporter_klass(pricing_info_results, params).export()
 
 
 if __name__ == '__main__':

@@ -1,21 +1,36 @@
+import json
 from abc import ABC, abstractmethod
 
 import boto3
-import json
 
 from infracalc.price_info import PricingInfo
 
 
 class AWSResource(ABC):
-    def __init__(self, service_name, product_family, term_type):
+    def __init__(self, service_name, product_family, term_type, region):
         self.service_name = service_name
         self.product_family = product_family
         self.client = boto3.client('pricing')
         self.term_type = term_type
+        self.region = region
 
     @abstractmethod
     def default_attributes(self):
         pass
+
+    def __base_attrs(self):
+        return [
+            {
+                'Type': 'TERM_MATCH',
+                'Field': 'productFamily',
+                'Value': self.product_family
+            },
+            {
+                'Type': 'TERM_MATCH',
+                'Field': 'location',
+                'Value': self.region
+            }
+        ]
 
     @staticmethod
     def prepare_filters(attrs):
@@ -27,7 +42,7 @@ class AWSResource(ABC):
     def __get_service_info(self, attrs):
         response = self.client.get_products(
             ServiceCode=self.service_name,
-            Filters=self.default_attributes() + self.prepare_filters(attrs),
+            Filters=self.__base_attrs() + self.default_attributes() + self.prepare_filters(attrs),
             MaxResults=1
         )
         return response

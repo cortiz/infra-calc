@@ -1,0 +1,100 @@
+A4B: productFamily, deploymentModel, servicecode, termType, usagetype, locationType, location, servicename, deploymentModelDescription
+AMAZONROUTE53REGIONALCHINA: productFamily, resourceEndpoint, termType, usagetype, description, locationType, toLocationType, routingTarget, servicecode, groupDescription, routingType, location, servicename, group
+AWSAmplify: productFamily, termType, usagetype, datatransferout, locationType, storage, servicecode, instancetype, location, servicename
+AWSAppSync: productFamily, termType, usagetype, graphqloperation, locationType, realtimeoperation, cachememorysize, protocol, servicecode, location, servicename, operation
+AWSBackup: productFamily, termType, usagetype, locationType, storagetype, servicecode, storageType, location, servicename, operation
+AWSBudgets: productFamily, servicecode, groupDescription, termType, usagetype, locationType, location, servicename, operation
+AWSCertificateManager: productFamily, termType, usagetype, locationType, type, servicecode, groupDescription, location, servicename, group
+AWSCloudFormation: Restriction, servicecode, cloudformationresourceProvider, termType, usagetype, locationType, location, servicename, operation
+AWSCloudMap: productFamily, servicecode, termType, usagetype, locationType, location, servicename, type
+AWSCloudTrail: productFamily, servicecode, termType, usagetype, locationType, location, insightstype, servicename
+AWSCodeArtifact: productFamily, Restriction, servicecode, pricingUnit, termType, usagetype, locationType, location, servicename
+AWSCodeCommit: productFamily, servicecode, termType, usagetype, locationType, location, group
+AWSCodeDeploy: productFamily, servicecode, termType, usagetype, locationType, location, servicename, operation, deploymentLocation
+AWSCodePipeline: productFamily, Restriction, servicecode, termType, usagetype, description, locationType, location, servicename
+AWSConfig: productFamily, termType, usagetype, locationType, type, servicecode, location, servicename, category, ciType
+AWSCostExplorer: productFamily, requestType, termType, usagetype, locationType, servicecode, granularity, location, servicename, operation
+AWSDataExchange: productFamily, volumeType, storageClass, servicecode, termType, usagetype, locationType, location, servicename
+AWSDataSync: productFamily, productSchemaDescription, servicecode, termType, usagetype, locationType, location, servicename
+AWSDataTransfer: productFamily, fromLocationType, termType, usagetype, toLocationType, toLocation, servicecode, transferType, servicename, fromLocation
+AWSDatabaseMigrationSvc: productFamily, volumeType, enhancedNetworkingSupported, memory, dedicatedEbsThroughput, vcpu, termType, locationType, storage, instanceFamily, availabilityZone, storageMedia, physicalProcessor, clockSpeed, networkPerformance, servicename, minVolumeSize, instanceType, usagetype, maxVolumeSize, processorFeatures, Restriction, servicecode, currentGeneration, location, processorArchitecture, operation
+AWSDeepRacer: productFamily, servicecode, termType, usagetype, description, locationType, location, servicename, operation
+AWSDeveloperSupport: productFamily, whoCanOpenCases, customerServiceAndCommunities, proactiveGuidance, termType, usagetype, includedServices, locationType, training, accountAssistance, thirdpartySoftwareSupport, operationsSupport, servicecode, architectureSupport, programmaticCaseManagement, architecturalReview, technicalSupport, location, caseSeverityresponseTimes, launchSupport, bestPractices
+AWSDeviceFarm: productFamily, os, deviceOs, termType, usagetype, description, locationType, executionMode, servicecode, location, servicename, meterMode
+AWSDirectConnect: productFamily, fromLocationType, virtualInterfaceType, termType, usagetype, directConnectLocation, locationType, toLocationType, georegioncode, toLocation, version, connectionType, capacity, servicecode, portSpeed, transferType, servicename, location, fromLocation, operation
+AWSDirectoryService: productFamily, directoryTypeDescription, directorySize, termType, usagetype, locationType, directoryType, Restriction, servicecode, pricingUnit, location, servicename, operation
+AWSELB: productFamily, termType, usagetype, locationType, servicecode, groupDescription, location, servicename, operation, group
+AWSElementalMediaConvert: productFamily, transcodingResult, videoQualitySetting, singleOrDualPass, termType, usagetype, addonFeature, locationType, description, videoFrameRate, resolution, codec, frameRate, vqSetting, servicecode, tier, location, servicename, videoResolution, videoCodec
+AWSElementalMediaLive: productFamily, termType, usagetype, locationType, reserveType, resolution, videoQuality, output, pipeline, frameRate, input, servicecode, bitRate, location, servicename, operation
+AWSElementalMediaPackage: productFamily, servicecode, termType, usagetype, locationType, transferType, location, servicename
+AWSElementalMediaStore: productFamily, ingestType, durability, termType, usagetype, description, locationType, availability, storageclass, servicecode, location, servicename, operation
+AWSElementalMediaTailor: productFamily, servicecode, termType, usagetype, locationType, location, servicename, operationType
+AWSEvents: productFamily, termType, usagetype, locationType, eventType, Restriction, servicecode, location, servicename, operation
+AWSFMS: productFamily, servicecode, termType, usagetype, locationType, location, servicename, operation, awsresource
+AWSGlobalAccelerator: productFamily, fromLocationType, termType, usagetype, toLocationType, toLocation, dominantnondominant, servicecode, servicename, fromLocation, trafficDirection, operation, clientLocation
+AWSGlueElasticViews: productFamily, volumeType, termType, usagetype, locationType, servicecode, groupDescription, location, servicename, operation, group
+AWSGlue: productFamily, termType, usagetype, locationType, Restriction, servicecode, location, servicename, operation, group
+AWSGreengrass: productFamily, tenancySupport, servicecode, termType, usagetype, locationType, location, servicename, operation
+AWSGroundStation: productFamily, bandwidth, termType, usagetype, locationType, servicecode, location, servicename, groundstation, ondemand
+AWSIoT1Click: productFamily, deviceType, servicecode, termType, usagetype, locationType, location, servicename, device
+AWSIoTAnalytics: productFamily, servicecode, termType, usagetype, locationType, location, servicename, operation, group
+AWSIoTEvents: productFamily, awsiotevents, servicecode, termType, usagetype, locationType, location, servicename
+AWSIoTSiteWise: productFamily, servicecode, termType, usagetype, locationType, location, servicename, group
+AWSIoTThingsGraph: productFamily, servicecode, termType, usagetype, locationType, location, servicename, operation, group
+AWSIoT: productFamily, termType, usagetype, locationType, eventType, newcode, protocol, servicecode, location, servicename
+AWSLambda: productFamily, termType, usagetype, locationType, Restriction, servicecode, groupDescription, location, servicename, group
+AWSMediaConnect: productFamily, fromLocationType, termType, usagetype, locationType, toLocationType, toLocation, reservedTier, servicecode, transferType, location, servicename, fromLocation, operation, flowType
+AWSNetworkFirewall: productFamily, servicecode, termType, usagetype, locationType, location, servicename, subcategory, operation
+AWSOutposts: productFamily, country, termType, usagetype, locationType, outpostsUnit, servicecode, currentGeneration, paymentOption, location, servicename, paymentTerm
+AWSQueueService: productFamily, messageDeliveryOrder, termType, usagetype, locationType, Restriction, servicecode, groupDescription, messageDeliveryFrequency, queueType, location, servicename, group
+AWSRoboMaker: productFamily, servicecode, termType, usagetype, locationType, location, servicename, availability, operation
+AWSSecretsManager: productFamily, servicecode, termType, usagetype, locationType, location, servicename, group
+AWSSecurityHub: productFamily, standardGroup, termType, usagetype, locationType, standardStorage, servicecode, findingSource, location, servicename, findingStorage, findingGroup
+AWSServiceCatalog: productFamily, servicecode, termType, usagetype, locationType, location, servicename, operation, withActiveUsers
+AWSShield: productFamily, fromLocationType, termType, usagetype, description, locationType, toLocationType, toLocation, servicecode, servicename, location, fromLocation, operation, resourceType
+AWSStorageGatewayDeepArchive: productFamily, termType, usagetype, locationType, storageDescription, storageClass, feeDescription, servicecode, feeCode, location, servicename, maximumCapacity, operation
+AWSStorageGateway: productFamily, termType, usagetype, locationType, version, storageDescription, Restriction, storageClass, feeDescription, servicecode, feeCode, location, servicename, maximumCapacity
+AWSSupportBusiness: productFamily, whoCanOpenCases, customerServiceAndCommunities, proactiveGuidance, termType, usagetype, includedServices, locationType, training, accountAssistance, thirdpartySoftwareSupport, operationsSupport, servicecode, architectureSupport, programmaticCaseManagement, architecturalReview, technicalSupport, location, caseSeverityresponseTimes, launchSupport, bestPractices
+AWSSupportEnterprise: productFamily, whoCanOpenCases, customerServiceAndCommunities, proactiveGuidance, termType, usagetype, includedServices, locationType, training, accountAssistance, thirdpartySoftwareSupport, operationsSupport, servicecode, architectureSupport, programmaticCaseManagement, architecturalReview, technicalSupport, location, caseSeverityresponseTimes, launchSupport, bestPractices
+AWSSystemsManager: productFamily, dataTransfer, apirequestsfree, parameterType, apirequestspaid, instances, termType, usagetype, changerequestsfree, locationType, storage, updates, gets, changerequestspaid, steps, describes, servicecode, location, servicename, opsItems, throughput
+AWSTransfer: productFamily, data, termType, usagetype, locationType, endpoint, servicecode, location, servicename, operation
+AWSXRay: productFamily, termType, usagetype, locationType, Restriction, servicecode, groupDescription, location, servicename, operation, group
+AlexaTopSites: productFamily, servicecode, termType, usagetype, locationType, location
+AlexaWebInfoService: productFamily, servicecode, termType, usagetype, locationType, location
+AmazonA2I: productFamily, termType, usagetype, locationType, servicecode, integratingFeature, workforceType, integratingService, location, servicename, operation, integratingApi
+AmazonApiGateway: productFamily, termType, usagetype, locationType, description, cacheMemorySizeGb, servicecode, location, servicename, operation
+AmazonAppStream: productFamily, osLicenseModel, vcpu, instanceType, termType, usagetype, locationType, instanceFamily, instanceFunction, operatingSystem, videoMemoryGib, Restriction, servicecode, memoryGib, licenseModel, location, servicename, operation
+AmazonAthena: productFamily, servicecode, freeQueryTypes, termType, usagetype, description, locationType, location, servicename
+AmazonBraket: productFamily, termType, usagetype, locationType, version, producttype, Restriction, operationOutcome, servicecode, provider, location, servicename, devicename, operation
+AmazonChimeBusinessCalling: productFamily, messagetype, tocountry, termType, usagetype, locationType, numbertype, servicecode, location, servicename, fromcountry
+AmazonChimeCallMe: productFamily, country, servicecode, tocountry, termType, usagetype, locationType, location, servicename
+AmazonChimeDialin: productFamily, country, servicecode, callingType, termType, usagetype, locationType, location, servicename
+AmazonChimeFeatures: productFamily, primaryplaceofuse, termType, usagetype, locationType, transactiontype, licenseType, servicecode, location, servicename
+AmazonChimeVoiceConnector: productFamily, messagetype, tocountry, termType, usagetype, locationType, numbertype, servicecode, location, servicename, fromcountry, calltype
+AmazonChime: productFamily, licenseType, servicecode, termType, usagetype, locationType, location, servicename
+AmazonCloudDirectory: productFamily, volumeType, termType, usagetype, locationType, Restriction, storageClass, servicecode, groupDescription, location, servicename, group
+AmazonCloudFront: productFamily, fromLocationType, requestType, termType, usagetype, locationType, toLocationType, requestDescription, toLocation, servicecode, groupDescription, transferType, location, servicename, fromLocation, operation, group
+AmazonCloudSearch: productFamily, instanceType, termType, usagetype, locationType, cloudSearchVersion, servicecode, groupDescription, location, servicename, operation, group
+AmazonCloudWatch: productFamily, termType, usagetype, locationType, version, logsDestination, storageMedia, Restriction, alarmType, servicecode, groupDescription, location, servicename, operation, group
+AmazonCognitoSync: productFamily, servicecode, termType, usagetype, locationType, location, operation
+AmazonCognito: productFamily, Restriction, servicecode, termType, usagetype, locationType, location, servicename, operation
+AmazonConnect: productFamily, servicecode, termType, usagetype, channel, locationType, location, servicename
+AmazonDAX: productFamily, memory, vcpu, instanceType, termType, usagetype, locationType, instanceFamily, servicecode, currentGeneration, networkPerformance, location, servicename
+AmazonDetective: productFamily, servicecode, dataType, termType, usagetype, locationType, location, servicename
+AmazonDocDB: productFamily, volumeType, engineCode, enhancedNetworkingSupported, memory, vcpu, termType, locationType, instanceFamily, storageMedia, physicalProcessor, clockSpeed, networkPerformance, servicename, group, minVolumeSize, instanceTypeFamily, instanceType, usagetype, normalizationSizeFactor, maxVolumeSize, databaseEngine, processorFeatures, servicecode, groupDescription, currentGeneration, location, processorArchitecture, operation
+AmazonDynamoDB: productFamily, volumeType, OfferingClass, termType, usagetype, locationType, servicecode, groupDescription, LeaseContractLength, location, servicename, PurchaseOption, operation, group
+AmazonEC2: instanceCapacityMetal, volumeType, maxIopsvolume, instance, instanceCapacity10xlarge, locationType, toLocationType, instanceFamily, operatingSystem, clockSpeed, LeaseContractLength, ecu, networkPerformance, instanceCapacity8xlarge, group, maxThroughputvolume, gpuMemory, ebsOptimized, maxVolumeSize, gpu, intelAvxAvailable, processorFeatures, instanceCapacity4xlarge, servicecode, groupDescription, elasticGraphicsType, volumeApiName, processorArchitecture, fromLocation, physicalCores, productFamily, fromLocationType, enhancedNetworkingSupported, intelTurboAvailable, memory, dedicatedEbsThroughput, vcpu, OfferingClass, instanceCapacityLarge, capacitystatus, termType, storage, toLocation, intelAvx2Available, storageMedia, physicalProcessor, provisioned, servicename, PurchaseOption, instancesku, productType, instanceCapacity18xlarge, instanceType, tenancy, usagetype, normalizationSizeFactor, instanceCapacity2xlarge, instanceCapacity16xlarge, maxIopsBurstPerformance, instanceCapacity12xlarge, instanceCapacity32xlarge, instanceCapacityXlarge, licenseModel, currentGeneration, preInstalledSw, transferType, location, instanceCapacity24xlarge, instanceCapacity9xlarge, instanceCapacityMedium, operation, resourceType
+AmazonECR: productFamily, servicecode, termType, usagetype, locationType, storageType, location, servicename
+AmazonECS: productFamily, termType, tenancy, usagetype, locationType, cputype, servicecode, location, servicename, memorytype
+AmazonEFS: productFamily, termType, usagetype, locationType, accessType, storageClass, servicecode, throughputClass, location, servicename, operation
+AmazonEI: productFamily, termType, usagetype, locationType, acceleratorType, servicecode, acceleratorSize, location, servicename, operation
+AmazonEKS: productFamily, termType, tenancy, usagetype, locationType, cputype, tiertype, servicecode, location, servicename, memorytype, operation
+AmazonES: productFamily, vcpu, OfferingClass, instanceType, termType, usagetype, locationType, storage, instanceFamily, storageMedia, servicecode, LeaseContractLength, ecu, memoryGib, currentGeneration, location, servicename, PurchaseOption, operation
+AmazonETS: productFamily, transcodingResult, servicecode, termType, usagetype, locationType, location, videoResolution
+AmazonElastiCache: productFamily, memory, vcpu, OfferingClass, termType, locationType, instanceFamily, storageMedia, LeaseContractLength, networkPerformance, servicename, PurchaseOption, group, instanceType, usagetype, cacheEngine, Restriction, servicecode, groupDescription, currentGeneration, transferType, location, operation
+AmazonFSx: productFamily, throughputCapacity, termType, usagetype, locationType, fileSystemType, servicecode, deploymentOption, storageType, location, servicename, operation, cacheType
+AmazonForecast: Restriction, servicecode, groupDetails, termType, usagetype, locationType, location, servicename
+AmazonGameLift: productFamily, vcpu, instanceType, termType, usagetype, locationType, instanceStorageGb, operatingSystem, Restriction, servicecode, groupDescription, ecu, memoryGib, currentGeneration, location, servicename, operation, dimension, group
+AmazonGlacier: productFamily, volumeType, durability, termType, usagetype, locationType, availability, feeDescription, servicecode, groupDescription, feeCode, location, servicename, group
+AmazonGuardDuty: productFamily, servicecode, termType, usagetype, locationType, location, servicename, group
+AmazonHoneycode: productFamily, usageTier, termType, usagetype, locationType, servicecode, tier, location, servicename, operation

@@ -3,9 +3,9 @@ from abc import ABC
 from infracalc.aws.aws_resource import AWSResource
 
 
-class AmazonEBS(AWSResource, ABC):
+class AmazonECR(AWSResource, ABC):
     def __init__(self, region):
-        super(AmazonEBS, self).__init__("AmazonEC2", "Storage", "OnDemand", region)
+        super(AmazonECR, self).__init__("AmazonECR", "EC2 Container Registry", "OnDemand", region)
 
     def default_attributes(self):
         return []
@@ -15,4 +15,4 @@ class AmazonEBS(AWSResource, ABC):
         amount = attrs.pop("amount")
         size = attrs.pop("size")
         attrs.pop("service")
-        return self.get_pricing(attrs, amount, size, name)
+        return self.get_pricing({}, amount, size, name)
