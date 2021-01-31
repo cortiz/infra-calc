@@ -41,3 +41,9 @@ services:
     storage:
       storageMedia: GP2
       size: 30
+  - service: AmazonALB
+    name: ALB
+    amount: 2
+  - service: AmazonNLB
+    name: NLB
+    amount: 1

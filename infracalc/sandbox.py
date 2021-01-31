@@ -37,10 +37,9 @@ def service_info(service_code):
 
     response = pricing.get_products(
         ServiceCode=service_code,
-        Filters=[{'Type': 'TERM_MATCH', 'Field': 'productFamily', 'Value': 'Elastic Search Instance'},
+        Filters=[{'Type': 'TERM_MATCH', 'Field': 'productFamily', 'Value': 'Load Balancer-Application'},
                  {'Type': 'TERM_MATCH', 'Field': 'location', 'Value': 'US East (N. Virginia)'},
-                 {'Type': 'TERM_MATCH', 'Field': 'termType', 'Value': 'OnDemand'},
-                 {'Type': 'TERM_MATCH', 'Field': 'instanceType', 'Value': 'c4.8xlarge.elasticsearch'},
+
 
                  ],
         MaxResults=100
@@ -62,5 +61,5 @@ def all():
 
 
 #all()
-service_options("AmazonES")
-#service_info("AmazonES")
+service_options("AmazonEC2")
+#service_info("AmazonEC2")
