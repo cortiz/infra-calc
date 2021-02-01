@@ -17,7 +17,7 @@ pricing = boto3.client("pricing")
 #
 #
 def service_options(service_name):
-    print("Selected EC2 Attributes & Values")
+    print("Selected {} Attributes & Values".format(service_name))
     print("================================")
     response = pricing.describe_services(ServiceCode=service_name)
     attrs = response['Services'][0]['AttributeNames']
@@ -31,15 +31,14 @@ def service_options(service_name):
         print("  " + attr + ": " + ", ".join(values))
 
 
-def service_info(service_code):
-    print("Selected {} Products".format(service_code))
+def service_info(service_code, product_family):
+    print("Selected {} {}Products".format(service_code, product_family))
     print("=====================")
 
     response = pricing.get_products(
         ServiceCode=service_code,
-        Filters=[{'Type': 'TERM_MATCH', 'Field': 'productFamily', 'Value': 'Load Balancer-Application'},
-                 {'Type': 'TERM_MATCH', 'Field': 'location', 'Value': 'US East (N. Virginia)'},
-
+        Filters=[{'Type': 'TERM_MATCH', 'Field': 'productFamily', 'Value': product_family},
+                  {'Type': 'TERM_MATCH', 'Field': 'location', 'Value': 'US East (N. Virginia)'},
 
                  ],
         MaxResults=100
@@ -60,6 +59,6 @@ def all():
     print()
 
 
-#all()
-service_options("AmazonEC2")
-#service_info("AmazonEC2")
+# all()
+#service_options("AmazonCloudWatch")
+service_info("AmazonCloudWatch", "Storage Snapshot")

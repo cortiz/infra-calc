@@ -18,7 +18,7 @@ class AWSResource(ABC):
     def default_attributes(self):
         pass
 
-    def __base_attrs(self):
+    def _base_attrs(self):
         return [
             {
                 'Type': 'TERM_MATCH',
@@ -39,16 +39,15 @@ class AWSResource(ABC):
             filters.append({'Type': 'TERM_MATCH', "Field": k, "Value": attrs[k]})
         return filters
 
-    def __get_service_info(self, attrs):
+    def _get_service_info(self, attrs):
         response = self.client.get_products(
             ServiceCode=self.service_name,
-            Filters=self.__base_attrs() + self.default_attributes() + self.prepare_filters(attrs),
+            Filters=self._base_attrs() + self.default_attributes() + self.prepare_filters(attrs),
             MaxResults=1
         )
         return response
 
-    @staticmethod
-    def __get_service_pricing(price):
+    def _get_service_pricing(self, price):
 
         for k in price.keys():
             data_key = next(iter(price[k]['priceDimensions'].keys()))
@@ -57,7 +56,7 @@ class AWSResource(ABC):
                     "pricePerUnit": pricing_data["pricePerUnit"]["USD"]}
 
     def get_pricing(self, attrs, amount_of_services, amount_of_units, service_name):
-        response = self.__get_service_info(attrs)
-        raw = self.__get_service_pricing(json.loads(response['PriceList'][0])['terms'][self.term_type])
+        response = self._get_service_info(attrs)
+        raw = self._get_service_pricing(json.loads(response['PriceList'][0])['terms'][self.term_type])
         return PricingInfo(raw["desc"], raw["unit"], raw["pricePerUnit"], amount_of_services, amount_of_units,
                            service_name)

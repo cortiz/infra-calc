@@ -1,7 +1,7 @@
 region: us-east-1
 type: aws
 export:
-  exporter: Table # Table, Json
+  exporter: Table # Table, Json, Xlsx
   params:
     file: my-service.xlsx
 services:
@@ -47,3 +47,20 @@ services:
   - service: AmazonNLB
     name: NLB
     amount: 1
+  - service: AmazonNatGateway
+    name: nat gateway
+    amount: 1
+    trafficPerMonth: 1
+  - service: AmazonCloudWatchMetric
+    name: Metrics
+    amount: 100
+  - service: AmazonCloudWatchLogsStandard
+    name: Logs
+    amount: 100
+    logRetention: 30
+  - service: AmazonS3
+    name: Buckets
+    volumeType: Standard
+    size: 1024
+
+
