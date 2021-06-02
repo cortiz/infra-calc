@@ -41,7 +41,7 @@ setup(
         "s3transfer==0.3.4",
         "six==1.15.0",
         "terminaltables==3.1.0",
-        "urllib3==1.26.3",
+        "urllib3==1.26.5",
         "XlsxWriter==1.3.7"
     ],
     entry_points={
